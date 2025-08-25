@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}COBOL to Java Converter{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'cobol_converter/css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% block body_content %}
+    <div class="header">
+        <h2>{% block header %}COBOL to Java Converter{% endblock %}</h2>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

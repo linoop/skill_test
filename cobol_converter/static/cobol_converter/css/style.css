@@ -1,0 +1,88 @@
+/* COBOL to Java Converter Styles */
+
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Header styles */
+.header { 
+    background: #333; 
+    color: #fff; 
+    padding: 10px; 
+}
+
+.content { 
+    padding: 20px; 
+}
+
+.container { 
+    display: flex; 
+}
+
+.panel { 
+    width: 50%; 
+    padding: 20px; 
+}
+
+textarea { 
+    width: 100%; 
+    height: 400px; 
+}
+
+.logs { 
+    color: #888; 
+    font-size: 0.9em; 
+}
+
+/* Progress Dialog Styles */
+.progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.progress-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 300px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.progress-subtext {
+    font-size: 14px;
+    color: #666;
+}

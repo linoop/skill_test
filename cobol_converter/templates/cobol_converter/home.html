@@ -1,0 +1,44 @@
+{% extends 'cobol_converter/base.html' %}
+{% load static %}
+
+{% block body_content %}
+    <!-- Progress Dialog Overlay -->
+    <div class="progress-overlay" id="progressOverlay">
+        <div class="progress-dialog">
+            <div class="spinner"></div>
+            <div class="progress-text">Converting COBOL to Java...</div>
+            <div class="progress-subtext">This may take a few moments</div>
+        </div>
+    </div>
+
+    <div class="header">
+        <h2>COBOL to Java Converter</h2>
+    </div>
+    <div class="content">
+        <form method="post" enctype="multipart/form-data" id="convertForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="convertBtn">Convert</button>
+        </form>
+        <div class="container">
+            <div class="panel">
+                <h3>COBOL Code</h3>
+                <textarea readonly>{{ cobol_code }}</textarea>
+            </div>
+            <div class="panel">
+                <h3>Java Code</h3>
+                <textarea readonly>{{ java_code }}</textarea>
+            </div>
+        </div>
+        {% if logs %}
+        <div class="logs">
+            <h4>Conversion Logs</h4>
+            <pre>{{ logs }}</pre>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'cobol_converter/js/script.js' %}"></script>
+{% endblock %}
